@@ -1,0 +1,25 @@
+﻿@using ParentToChildCommunication.Data
+
+<div class="container">
+    <div class="row">
+        @if (Products.Count > 0)
+        {
+            foreach (var item in Products)
+            {
+                <div class="col-auto m-2">
+                    <div class="card">
+                        <div class="card-header"> <span>@item.Name</span> </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="row">
+        <span>@Product.Id @Product.Name</span>
+    </div>
+</div>
+ 
+@code {
+    [Parameter] public List<Product> Products { get; set; } = new();
+    [Parameter] public Product Product { get; set; } = new();
+}

@@ -1,0 +1,28 @@
+﻿@page "/"
+@using ParentToChildCommunication.Data
+
+<Child Products="Products" Product="Product"></Child>
+
+@code{
+    private List<Product> Products {get;set;} = new();
+    private Product Product { get; set; } = new();
+    protected override void OnInitialized()
+    {
+        Products = new(){
+            new Product() { Name = "Television " },
+            new Product() { Name = "Mobile " },
+            new Product() { Name = "Desktop " },
+            new Product() { Name = "Laptop " },
+            new Product() { Name = "Refrigerator " },
+            new Product() { Name = "Computer " },
+            new Product() { Name = "Keyboard " },
+            new Product() { Name = "Mouse " },
+            new Product() { Name = "Monitor " },
+            new Product() { Name = "Microphone " },
+            new Product() { Name = "Speaker " }
+        };
+
+        Product = new Product() { Id = 1, Name = "New Product Name" };
+    }
+
+}
